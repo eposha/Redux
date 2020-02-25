@@ -29,7 +29,7 @@ class UsersList extends React.Component {
 }
 
 const mapState = state => {
-  return { users: state.users, currentPage: state.currentPage };
+  return { users: state.users.usersList, currentPage: state.users.currentPage };
 };
 
 const mapDispatch = {
