@@ -10,7 +10,7 @@ class UsersList extends React.Component {
     const currentUsersList = users.slice(currentPage * 3, 3 + currentPage * 3);
 
     return (
-      <>
+      <div>
         <Pagination
           goNextPage={goNext}
           goPrevPage={goPrev}
@@ -23,7 +23,7 @@ class UsersList extends React.Component {
             <User key={user.id} {...user} />
           ))}
         </ul>
-      </>
+      </div>
     );
   }
 }
