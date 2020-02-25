@@ -7,16 +7,18 @@ const Pagination = ({
   totalItems,
   itemsPerPage
 }) => {
+  const currentPageNum = currentPage + 1;
+
   const isLastPage =
-    itemsPerPage < 3 || currentPage === totalItems ? true : false;
-  const isFirstPage = currentPage === 1 ? true : false;
+    itemsPerPage < 3 || currentPageNum === totalItems ? true : false;
+  const isFirstPage = currentPageNum === 1 ? true : false;
 
   return (
     <div className="pagination">
       <button className="btn" onClick={goPrevPage} disabled={isFirstPage}>
         {isFirstPage ? "" : "←"}
       </button>
-      <span className="pagination__page">{currentPage}</span>
+      <span className="pagination__page">{currentPageNum}</span>
       <button className="btn" onClick={goNextPage} disabled={isLastPage}>
         {isLastPage ? "" : "→"}
       </button>

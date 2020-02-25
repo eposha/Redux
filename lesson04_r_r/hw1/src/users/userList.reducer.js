@@ -4,7 +4,7 @@ import {
 } from './userList.actions';
 
 const initialState = {
-    currentPage: 1,
+    currentPage: 0,
     users: [
         {
             id: 'id-0',

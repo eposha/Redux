@@ -7,7 +7,7 @@ import Pagination from "./Pagination";
 class UsersList extends React.Component {
   render() {
     const { users, currentPage, goNext, goPrev } = this.props;
-    const currentUsersList = users.slice(currentPage, 3 + currentPage);
+    const currentUsersList = users.slice(currentPage * 3, 3 + currentPage * 3);
 
     return (
       <>
