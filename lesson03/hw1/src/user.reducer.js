@@ -5,7 +5,7 @@ const userReducer = (state = null, action) => {
         case SET_USER:
             return {
                 ...state,
-                ...action.payload.userData
+                ...action.payload.user
             };
 
         case REMOVE_USER:
