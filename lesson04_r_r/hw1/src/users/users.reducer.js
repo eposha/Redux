@@ -1,7 +1,7 @@
 import {
     GO_PREV,
     GO_NEXT
-} from './userList.actions';
+} from './users.actions';
 
 const initialState = {
     usersList: [

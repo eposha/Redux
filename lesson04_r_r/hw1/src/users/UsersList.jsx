@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import * as userActions from "./userList.actions";
+import * as userActions from "./users.actions";
 import User from "./User";
 import Pagination from "./Pagination";
 
