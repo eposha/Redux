@@ -9,8 +9,8 @@ const Pagination = ({
 }) => {
   const currentPageNum = currentPage + 1;
 
-  const isLastPage =
-    itemsPerPage < 3 || currentPageNum === totalItems ? true : false;
+  const isLastPage = currentPageNum * itemsPerPage >= totalItems;
+
   const isFirstPage = currentPageNum === 1 ? true : false;
 
   return (

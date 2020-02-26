@@ -16,7 +16,7 @@ class UsersList extends React.Component {
           goPrevPage={goPrev}
           currentPage={currentPage}
           totalItems={users.length}
-          itemsPerPage={currentUsersList.length}
+          itemsPerPage={3}
         />
         <ul className="users">
           {currentUsersList.map(user => (
