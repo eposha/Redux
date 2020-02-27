@@ -1,8 +1,8 @@
 import React from "react";
 
 const Pagination = ({
-  goNextPage,
-  goPrevPage,
+  goNext,
+  goPrev,
   currentPage,
   totalItems,
   itemsPerPage
@@ -15,11 +15,11 @@ const Pagination = ({
 
   return (
     <div className="pagination">
-      <button className="btn" onClick={goPrevPage} disabled={isFirstPage}>
+      <button className="btn" onClick={goPrev} disabled={isFirstPage}>
         {isFirstPage ? "" : "←"}
       </button>
       <span className="pagination__page">{currentPageNum}</span>
-      <button className="btn" onClick={goNextPage} disabled={isLastPage}>
+      <button className="btn" onClick={goNext} disabled={isLastPage}>
         {isLastPage ? "" : "→"}
       </button>
     </div>
