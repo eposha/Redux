@@ -1,7 +1,7 @@
-export const INC = 'COUNTER/INCREASE';
-export const DEC = 'COUNTER/DECREASE';
-export const RES = 'COUNTER/RESET';
+export const INCREMENT = 'COUNTER/INCREMENT';
+export const DECREMENT = 'COUNTER/DECREMENT';
+export const RESET = 'COUNTER/RESET';
 
-export const inc = () => ({ type: INC })
-export const dec = () => ({ type: DEC })
-export const res = () => ({ type: RES })
+export const inc = () => ({ type: INCREMENT })
+export const dec = () => ({ type: DECREMENT })
+export const res = () => ({ type: RESET })
