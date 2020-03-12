@@ -1,11 +1,15 @@
 import React from "react";
 import TasksList from "./TasksList";
+import CreateTaskInput from "./CreateTaskInput";
 
 const TodoList = () => {
   return (
     <>
       <h1 className="title">Todo List</h1>
-      <TasksList />
+      <main className="todo-list">
+        <CreateTaskInput />
+        <TasksList />
+      </main>
     </>
   );
 };

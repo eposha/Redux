@@ -1,34 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { sortedTasksListSelector } from "../tasks.selectors";
 import * as tasksAction from "../tasks.actions";
-import CreateTaskInput from "./CreateTaskInput";
 import Task from "./Task";
 
-class TasksList extends React.Component {
-  componentDidMount() {
-    this.props.getTaskList();
-  }
+const TasksList = ({ tasks, getTasksList, updateTask, deleteTask }) => {
+  useEffect(() => {
+    getTasksList();
+  }, []);
 
-  render() {
-    return (
-      <div className="todo-list">
-        <CreateTaskInput onCreate={this.props.createTask} />
-        <ul className="list">
-          {this.props.tasks.map(task => (
-            <Task
-              key={task.id}
-              {...task}
-              onDelete={this.props.deleteTask}
-              onChange={this.props.updateTask}
-            />
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
+  return (
+    <ul className="list">
+      {tasks.map(task => (
+        <Task
+          key={task.id}
+          {...task}
+          onDelete={deleteTask}
+          onChange={updateTask}
+        />
+      ))}
+    </ul>
+  );
+};
 
 const mapStateToProps = state => {
   return {
@@ -37,7 +31,7 @@ const mapStateToProps = state => {
 };
 
 TasksList.propTypes = {
-  getTaskList: PropTypes.func.isRequired,
+  getTasksList: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
   updateTask: PropTypes.func.isRequired,
   createTask: PropTypes.func.isRequired,

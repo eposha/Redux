@@ -14,7 +14,7 @@ export const tasksListReceived = tasksList => {
     return action;
 }
 
-export const getTaskList = () => {
+export const getTasksList = () => {
     return function (dispatch, getState) {
         tasksGateway.fetchTasksList()
             .then(tasksList => {
@@ -34,13 +34,13 @@ export const updateTask = (taskId) => (dispatch, getState) => {
     };
     tasksGateway
         .updateTask(taskId, updatedTask)
-        .then(() => dispatch(getTaskList())
+        .then(() => dispatch(getTasksList())
         )
 };
 
 export const deleteTask = (taskId) => (dispatch, getState) => {
     tasksGateway
-        .deleteTask(taskId).then(() => dispatch(getTaskList()))
+        .deleteTask(taskId).then(() => dispatch(getTasksList()))
 };
 
 export const createTask = (text) => (dispatch, getState) => {
@@ -50,5 +50,5 @@ export const createTask = (text) => (dispatch, getState) => {
     };
 
     tasksGateway
-        .createTask(newTask).then(() => dispatch(getTaskList()))
+        .createTask(newTask).then(() => dispatch(getTasksList()))
 }
